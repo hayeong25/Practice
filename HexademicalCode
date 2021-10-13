@@ -1,0 +1,45 @@
+package me;
+
+public class HexademicalCode {
+
+	// 16진수 변환
+	public static String Hexademical(int num) {
+		String output = "";
+		int count;
+		char Storage;
+		for( ; 1 <= num; num = num / 16) { // num : 몫 / count : 나머지
+			count = num % 16;
+			switch(count) {
+			case 10 :
+				Storage = 'A';
+				output = Storage + output;
+				break;
+			case 11 :
+				Storage = 'B';
+				output = Storage + output;
+				break;
+			case 12 :
+				Storage = 'C';
+				output = Storage + output;
+				break;
+			case 13 :
+				Storage = 'D';
+				output = Storage + output;
+				break;
+			case 14 :
+				Storage = 'E';
+				output = Storage + output;
+				break;
+			case 15 :
+				Storage = 'F';
+				output = Storage + output;
+				break;
+			default :
+				output = count + output;
+				break;
+			}
+		}
+		return output;
+	}
+
+}
