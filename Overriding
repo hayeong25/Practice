@@ -1,0 +1,32 @@
+package me;
+
+// Overriding : 상위 클래스가 가지고 있는 메서드가 하위 클래스로 상속되어 하위 클래스에 사용. 하위 클래스에서 메서드를 재정의
+
+class Woman {
+	public String name;
+	public int age;
+	public void info() {
+		System.out.println("여자의 이름은 " + name + "이고, 나이는 " + age + "세입니다.");
+	}
+}
+
+class Job extends Woman { // Woman 클래스(부모 클래스)를 상속받음
+	String job;
+	public void info() { // 부모 클래스에 있는 info() 메소드 재정의
+		super.info();
+		System.out.println("여자의 직업은 " + job + "입니다.");
+	}
+}
+
+public class Overriding {
+
+	public static void main(String[] args) {
+
+		Job job = new Job(); // Job 객체 생성
+		// 변수 설정
+		job.name = "유리";
+		job.age = 30;
+		job.job = "프로그래머";
+		job.info(); // 호출
+	}
+}
