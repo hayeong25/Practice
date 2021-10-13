@@ -1,0 +1,84 @@
+package me;
+
+import java.util.Scanner;
+
+interface Setting {
+	String user();
+	int com();
+}
+
+public class Game implements Setting {
+	public static void main(String[] args) {
+		Game g = new Game();
+		int countuser = 0;
+		int countcom = 0;
+		System.out.println("가위 바위 보 게입을 시작합니다.");
+		for(int i = 0; countuser+countcom == 5; i++) {
+			System.out.print("가위 바위 보! >> ");
+			String user = g.user();
+			int com = g.com();
+			if((user.equals("가위"))) {
+				if(com == 0) {
+					System.out.println("사용자 : 가위, 컴퓨터 : 가위\t 비겼습니다.");
+				}
+				else if(com == 1) {
+					System.out.println("사용자 : 가위, 컴퓨터 : 바위\t 컴퓨터가 이겼습니다.");
+					countcom++;
+				}
+				else if(com == 2) {
+					System.out.println("사용자 : 가위, 컴퓨터 : 보\t 사용자가 이겼습니다.");
+					countuser++;
+				}
+			}
+			else if(user.equals("바위")) {
+				if(com == 0) {
+					System.out.println("사용자 : 바위, 컴퓨터 : 가위\t 사용자가 이겼습니다.");
+					countuser++;
+				}
+				else if(com == 1) {
+					System.out.println("사용자 : 바위, 컴퓨터 : 바위\t 비겼습니다.");
+				}
+				else if(com == 2) {
+					System.out.println("사용자 : 바위, 컴퓨터 : 보\t 컴퓨터가 이겼습니다.");
+					countcom++;
+				}
+			}
+			else if(user.equals("보")) {
+				if(com == 0) {
+					System.out.println("사용자 : 보, 컴퓨터 : 가위\t 컴퓨터가 이겼습니다.");
+					countcom++;
+				}
+				else if(com == 1) {
+					System.out.println("사용자 : 보, 컴퓨터 : 바위\t 사용자가 이겼습니다.");
+					countuser++;
+				}
+				else if(com == 2) {
+					System.out.println("사용자 : 보, 컴퓨터 : 보\t 비겼습니다.");
+				}
+			}
+		}
+		System.out.println("사용자 : " + countuser +"승\t 컴퓨터 : " + countcom + "승");
+		if(countuser > countcom) {
+			System.out.println("우왕 이겼어요 짝짝!");
+		}
+		else if(countuser < countcom) {
+			System.out.println("으앙 졌어요ㅠㅠ");
+		}
+		else {
+			System.out.println("엥 비겼어요.");
+		}
+	}
+
+	@Override
+	public String user() {
+		Scanner sc = new Scanner(System.in);
+		String user = sc.next();
+		return user;
+	}
+
+	@Override
+	public int com() {
+		int r = (int)(Math.random() * 3);
+		return r;
+	}
+}
