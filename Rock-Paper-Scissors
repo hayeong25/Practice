@@ -1,0 +1,38 @@
+package me;
+
+import java.util.Scanner;
+
+interface Setting {
+	String user();
+	String com();
+	public boolean compare(String user, String com);
+	}
+
+class User {
+	Scanner sc = new Scanner(System.in);
+	String user;
+	public User() {
+	}
+	public void setUser() {
+		System.out.print("가위 바위 보 선택하세요 >> ");
+		user = sc.next();
+	}
+
+	public String getUser() {
+		return user;
+	}
+}
+
+public class Game {
+	public static void main(String[] args) {
+		User user = new User();
+		String[] com = {"가위", "바위", "보"};
+		int r = (int)(Math.random() * 3);
+		switch(com[r]) {
+		case "가위" :
+			if(user.getUser().equals(com[r])) {
+			}
+		}
+		// for , 실행문 main 
+	}
+}
