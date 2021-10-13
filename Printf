@@ -1,0 +1,19 @@
+package me;
+
+		// 	System.out.printf();
+
+public class Printf {
+
+	public static void main(String[] args) {
+
+		int a = 100;
+		String b = "100";
+		System.out.printf("%s", b); // 문자열 변수 b = 문자열 "100"
+		System.out.println();
+		System.out.printf("%d\n", a); // 정수형 변수 a = 정수 100
+		System.out.printf("100+100"); // 문자역 "100+100"
+		System.out.println(); // System.out.println(); 대신 서식문자 뒤에 \n 또는 %n 붙여도 됨
+		System.out.printf("%d+%d=%d%n", 100, 100, 200); // 정수 100+100=200
+		System.out.printf("%s", "100"); // 문자열 서식 지정 대입 "100"
+		}
+}
