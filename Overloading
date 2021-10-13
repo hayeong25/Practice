@@ -1,0 +1,26 @@
+package me;
+
+// Overloading : 같은 이름의 메소드를 여러 개 정의하고, 매개변수의 유형과 개수를 다르게
+
+class OverloadingTest {
+	void cat() { // 이름이 cat인 메소드
+		System.out.println("매개변수 없음");
+	}
+	void cat(int a, int b) { // 매개변수 int형이 2개인 cat인 메소드
+		System.out.println("매개변수 : " + a + ", " + b);
+	}
+	void cat(String c) {
+		System.out.println("매개변수 : " + c);
+	}
+}
+
+public class Overloading {
+
+	public static void main(String[] args) {
+
+		OverloadingTest ot = new OverloadingTest(); // OverloadingTest 객체 생성
+		ot.cat(); // 매개변수가 없는 cat 호출
+		ot.cat(20, 80); // int형 매개변수가 2개인 cat 호출
+		ot.cat("오버로딩 예제입니다."); // String 매개변수가 1개인 cat 호출
+	}
+}
